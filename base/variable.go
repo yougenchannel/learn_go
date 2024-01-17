@@ -51,7 +51,7 @@ func main() {
 		l float64
 		m int8
 		n int16
-		o int32
+		o string
 		p int64
 		q rune
 		r byte
