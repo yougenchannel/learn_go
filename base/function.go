@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	lib "learn_go/base/lib"
+)
 
 type Person struct {
 	name string
@@ -18,13 +21,20 @@ type Animal interface {
 */
 func main() {
 	p1 := Person{age: 1, name: "yougen"}
-	p1.sayHello()
+	//p1.sayHello()
 	fmt.Println(p1.age) // 1
 	//p1.setName("new Name")
 	fmt.Println(p1.name)
 	p2 := &p1
 	p2.setName("p2 set name")
 	printPerson(p2)
+
+	a := 1
+	b := 2
+	swap(&a, &b)
+	lib.Test_Lib()
+	fmt.Println("a = ", a, "b = ", b)
+
 }
 
 func (p *Person) sayHello() {
@@ -42,4 +52,23 @@ func (p *Person) String() string {
 
 func printPerson(v fmt.Stringer) {
 	fmt.Println(v)
+}
+
+func functionName(arg string) (int, float64) {
+	fmt.Println(arg)
+	return 1, 1.1
+}
+
+func multipleReturn() (r1 string, r2 string) {
+	r1 = "return1"
+	r2 = "return2"
+	return r1, r2
+}
+
+func notReturn() {
+	fmt.Println("not have result")
+}
+
+func swap(a, b *int) {
+	*a, *b = *b, *a
 }
