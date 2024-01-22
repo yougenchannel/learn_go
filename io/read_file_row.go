@@ -13,7 +13,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer open.Close()
+	defer func(open *os.File) {
+		err := open.Close()
+		if err != nil {
+
+		}
+	}(open)
 
 	var col1, col2 []string
 
