@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("io/test.txt")
+	file, err := os.Open("io/testing.txt")
 	if err != nil {
 		fmt.Println(err)
 		return

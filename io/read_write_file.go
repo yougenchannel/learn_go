@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var fileName = "io/test.txt"
+	var fileName = "io/testing.txt"
 	bytes, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		fmt.Println(err)

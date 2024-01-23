@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const readFile = "io/test.txt"
+const readFile = "io/testing.txt"
 
 func main() {
 	open, err := os.Open(readFile)
